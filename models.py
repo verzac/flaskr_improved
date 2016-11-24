@@ -1,0 +1,2 @@
+class InvalidKeytagException(BaseException):
+    pass
