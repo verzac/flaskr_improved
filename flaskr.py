@@ -56,6 +56,21 @@ def close_db(error):
         print(str(error))
 
 
+@app.context_processor
+def inject_header_footer():
+    return dict(nav_items=get_nav_items())
+
+
+def get_nav_items():
+    nav_items = []
+    if session.get('logged_in'):
+        nav_items.append(HTMLLink("Log Out", url_for("logout")))
+    else:
+        nav_items.append(HTMLLink("Log In", url_for("login")))
+        nav_items.append(HTMLLink("Register", url_for("register")))
+    return nav_items
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     error = None

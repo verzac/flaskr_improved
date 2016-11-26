@@ -1,10 +1,8 @@
 <h1>Flaskr</h1>
 <div class="metanav">
-    {% if not session.logged_in %}
-        <a href="{{ url_for('login') }}">Log in</a>
-        &nbsp;|&nbsp;
-        <a href="{{url_for('register')}}">Register</a>
-    {% else %}
-        <a href="{{ url_for('logout') }}">Log out</a>
-    {% endif %}
+    <ul id="main_nav">
+    {% for nav_item in nav_items %}
+        <li><a href="{{nav_item.get_href()}}">{{nav_item.get_label()}}</a></li>
+    {% endfor %}
+    </ul>
 </div>
