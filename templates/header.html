@@ -1,0 +1,8 @@
+<h1>Flaskr</h1>
+<div class="metanav">
+    <ul id="main_nav">
+    {% for nav_item in nav_items %}
+        <li><a href="{{nav_item.get_href()}}">{{nav_item.get_label()}}</a></li>
+    {% endfor %}
+    </ul>
+</div>

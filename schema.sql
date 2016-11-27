@@ -4,8 +4,8 @@ create table authentication (
   password text not null
 );
 
-drop table if exists entries;
-create table entries (
+drop table if exists blog_entries;
+create table blog_entries (
   id integer primary key autoincrement,
   title text not null,
   'text' text not null,
@@ -20,6 +20,8 @@ create table keytags (
   who_used_it_last text,
   foreign key(who_used_it_last) references authentication(username)
 );
+
+drop table if exists page_entries;
 
 insert into authentication
 values ('root', 'root');

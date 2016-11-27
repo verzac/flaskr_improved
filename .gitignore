@@ -94,3 +94,4 @@ ENV/
 .idea/vcs.xml
 .idea/modules.xml
 .idea/misc.xml
+.idea/flaskr_improved.iml
